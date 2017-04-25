@@ -1,0 +1,27 @@
+#!/bin/sh
+
+scriptDir=$(readlink -f $(dirname "$0"))
+
+version="2.0"
+
+jar1="$scriptDir/target/scala-2.11/exi-utils-assembly-$version.jar"
+if [ -f "$jar1" ]
+then
+  jar="$jar1"
+else
+  jar="$scriptDir/bin/exi-utils-$version.jar"
+fi
+
+#echo "Using $jar"
+#ls -laFg $jar
+#echo ""
+
+#echo "$*"
+if [ "$JAVA_OPTS" != "" ]
+then
+  echo ""
+  echo "Using JAVA_OPTS $JAVA_OPTS"
+  echo ""
+fi
+java $JAVA_OPTS -jar $jar $*
+
