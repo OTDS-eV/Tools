@@ -1,4 +1,4 @@
-# validator
+# xml validator
 ## Version 
 * 1.0: initial version
 
