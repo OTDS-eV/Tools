@@ -72,6 +72,7 @@ object validator {
       // allgemeine Exception anfangen
     } catch {
       case e: Exception => println("file not valid (" + filename + "): " + e.getMessage)
+        System.exit(1)
     }
   }
 
